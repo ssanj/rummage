@@ -1,0 +1,2 @@
+#!/bin/bash
+JAVA_OPTS="-Xms2g -Xmx2g" java -jar target/rummage.jar $1

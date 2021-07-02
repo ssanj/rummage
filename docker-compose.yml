@@ -1,0 +1,17 @@
+version: '3'
+services:
+  dev:
+    build: support/dev
+    working_dir: /work
+    volumes:
+      - .:/work
+      - ivy-cache:/root/.ivy2
+      - sbt-cache:/root/.sbt
+      - coursier-cache:/root/.cache/coursier
+volumes:
+  ivy-cache :
+    external: true
+  coursier-cache:
+    external: true
+  sbt-cache:
+    external: true

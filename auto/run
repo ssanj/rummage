@@ -1,0 +1,5 @@
+#!/bin/bash
+
+auto/dev-environment sbt clean assembly
+
+support/dev/run $1

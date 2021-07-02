@@ -1,0 +1,17 @@
+#!/bin/bash -e
+
+cd $(dirname $0)/..
+
+# Clean containers
+trap "docker-compose down --volumes --remove-orphans" 0
+
+# Create cache volumes
+docker volume create --name ivy-cache >/dev/null
+docker volume create --name coursier-cache >/dev/null
+docker volume create --name sbt-cache >/dev/null
+
+# Build dev profile
+docker-compose build dev
+
+# Run script or jump into bash
+docker-compose run --rm --service-ports dev ${@-bash}

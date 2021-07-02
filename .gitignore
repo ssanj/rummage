@@ -1,0 +1,10 @@
+*.sublime-*
+target
+.ctags_srcs
+.tags
+.metals
+.bloop
+.bsp
+project/metals.sbt
+project/project
+.idea
